@@ -2,22 +2,22 @@ from flask import (Flask, render_template, request)
 
 app = Flask(__name__)
 
-app.route("/")
+@app.route("/")
 def index():
-    return "<h1>Página inicial<h1>"
+    return render_template("inicial.html")
 
-app.route("/contato", methods=("POST", ))
+@app.route("/contato", methods=("POST", ))
 def contato():
-    return "<h1>Contato<h1>"
+    return render_template("contato.html")
 
-app.route("/sobre")
+@app.route("/sobre")
 def sobre():
-    return "<h1>Sobre<h1>"
+    return render_template("sobre.html")
     
-app.route("/produtos/", methods=("GET", ))
+@app.route("/produtos/", methods=("GET", ))
 def produtos(pesquisa = None):
-    return "<h1>Produtos<h1>"
+    return render_template("produtos.html")
 
-app.route("/compra/<string:produto>")
+@app.route("/compra/<string:produto>")
 def compra(produto = None):
-    return "<h1>Produtos<h1>"
+    return render_template("compra.html")
