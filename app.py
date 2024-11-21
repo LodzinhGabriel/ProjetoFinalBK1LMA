@@ -6,9 +6,13 @@ app = Flask(__name__)
 def index():
     return render_template("inicial.html")
 
-@app.route("/contato", methods=["GET", "POST"])
+@app.route("/contato")
 def contato():
     return render_template("contato.html")
+
+@app.route("/contato/email", methods=["GET", "POST"])
+def contato():
+    return render_template("contatoemail.html")
 
 @app.route("/sobre")
 def sobre():
@@ -21,3 +25,19 @@ def produtos(pesquisa = None):
 @app.route("/compra/<string:produto>")
 def compra(produto = None):
     return render_template("compra.html")
+    
+@app.route("/erro404")
+def erro():
+    return render_template("pagina404.html")
+
+@app.route("/carrinho")
+def sobre():
+    return render_template("carrinho.html")
+
+@app.route("/login")
+def sobre():
+    return render_template("login.html")
+
+@app.route("/novaconta")
+def sobre():
+    return render_template("novaconta.html")
