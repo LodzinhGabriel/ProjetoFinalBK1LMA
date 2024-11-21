@@ -1,6 +1,134 @@
 {% extends 'layout.html' %}
 {% block content %}
 
-<h1>Contato</h1>
+<style>
+            .content-container {
+            padding: 100px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #f10000;
+            font-size: 22px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .section-subtitle {
+            color: #333;
+            font-size: 16px;
+            margin-bottom: 15px;
+        }
+
+        .section-details {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+
+        .contact-options {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .contact-card {
+            background-color: #F9F9F9;
+            border: 1px solid #EAEAEA;
+            border-radius: 10px;
+            text-align: center;
+            flex: 1;
+            padding: 20px;
+        }
+
+        .contact-card i {
+            color: #ff0000;
+            font-size: 30px;
+            margin-bottom: 10px;
+        }
+
+        .contact-card h3 {
+            font-size: 18px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .contact-card .status {
+            color: #00AA00;
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+
+        .contact-card .info {
+            color: #000000;
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .contact-card .button {
+            background-color: #ff0000;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .footer {
+            text-align: center;
+            color: #888;
+            font-size: 12px;
+            margin-top: 20px;
+        }
+
+
+</style>
+
+<div class="content-container">
+    <div class="section-header">
+        <i class="fas fa-headset"></i>
+        ATENDIMENTO AO CLIENTE
+    </div>
+    <div class="section-subtitle">
+        Dúvidas? Entre em contato com nossos canais de atendimento.
+    </div>
+    <div class="section-details">
+        Nosso atendimento é de <strong>segunda à sexta, das 08:00 às 20:00, e aos sábados, das 09:00 às 15:00</strong>
+        - Horário de Brasília (UTC -3). Não atendemos aos domingos e feriados nacionais.
+    </div>
+
+    <div class="contact-options">
+        <div class="contact-card">
+            <i class="fas fa-phone-alt"></i>
+            <h3>Telefone</h3>
+            <div class="status">ONLINE</div>
+            <div class="info">(17) 3453-6666</div>
+        </div>
+        <div class="contact-card">
+            <i class="fas fa-comments"></i>
+            <h3>Chat de atendimento
+            </h3>
+
+            <div class="status">ONLINE</div>
+            <button class="button">INICIAR ATENDIMENTO</button>
+        </div>
+        <div class="contact-card">
+            <i class="fas fa-envelope"></i>
+            <h3>E-mail de contato</h3>
+            <div class="section-details">Responderemos em até 1 dia útil</div>
+            <button class="button">ENVIAR EMAIL</button>
+        </div>
+    </div>
+
+</div>
+
+
+
 
 {% endblock %}
