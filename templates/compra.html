@@ -1,6 +1,120 @@
 {% extends 'layout.html' %}
 {% block content %}
 
-<h1>Compra</h1>
+<style>
+    .content{
+     text-align: center;
+        color: #ffffff;
+        font-size: 18px;
+        margin: 130px auto;
+        max-width: 800px;
+        line-height: 1.6;
+    }
+
+    body {
+        margin: 0;
+        font-family: 'Arial', sans-serif;
+        background-color: #7d7b7b;
+        justify-content: center;
+        align-items: center;
+        
+    }
+
+    .container {
+        background-color: #444;
+        width: 90%;
+        max-width: 600px;
+        padding: 25px;
+        border-radius: 10px;
+        text-align: center;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -30%);
+    }
+
+
+.product-image img {
+    width: 100%;
+    max-width: 300px;
+    margin-bottom: 20px;
+}
+
+.product-title {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.product-info {
+    margin: 10px 0;
+    font-size: 16px;
+}
+
+.price-info {
+    background-color: #555;
+    padding: 15px;
+    border-radius: 10px;
+    margin: 20px 0;
+}
+
+.price-info p {
+    margin: 10px 0;
+}
+
+.price-discount {
+    font-size: 18px;
+    font-weight: bold;
+    color: #0f0;
+}
+
+.price-installments {
+    color: #ddd;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn-buy {
+    background-color: #ff0000;  
+    color: #ffffff;
+}
+
+.btn-installments {
+    background-color: #ff4747;
+    color: #f6f6f6;
+}
+</style>
+
+
+<div class="container" >
+<div class="product-image">
+    <img src="../static/assets/mouse2.jpg" alt="Mouse Gamer Redragon Storm Elite RGB">
+</div>
+<div class="product-title">
+    Mouse Gamer Redragon Storm Elite RGB 16000DPI Preto, M988-RGB
+</div>
+<div class="product-info">Marca: Redragon</div>
+<div class="product-info">Produto Disponível</div>
+<div class="price-info">
+    <p>à vista <span class="price-discount">R$ 719,99</span> no PIX com 15% de desconto</p>
+    <p class="price-installments">R$ 847,05 em até 12x de R$ 70,59 sem juros no cartão</p>
+</div>
+<div class="buttons">
+    <button class="btn btn-buy">COMPRAR</button>
+    <button class="btn btn-installments">PARCELAMENTO</button>
+</div>
+</div>
 
 {% endblock %}
