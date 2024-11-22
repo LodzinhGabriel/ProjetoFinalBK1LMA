@@ -1,6 +1,129 @@
 {% extends 'layout.html' %}
 {% block content %}
 
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f4;
+    }
+    header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background-color: #000;
+        color: #fff;
+        padding: 10px 20px;
+    }
+    header .logo {
+        font-size: 24px;
+        font-weight: bold;
+    }
+    header .cart {
+        background-color: #00ff00;
+        padding: 10px 20px;
+        border-radius: 5px;
+        color: #000;
+        text-decoration: none;
+    }
+    .products {
+        margin: 20px;
+    }
+    .products h2 {
+        color: #ff4500;
+    }
+    .product-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 20px;
+    }
+    .product-card {
+        background: #fff;
+        padding: 15px;
+        border-radius: 5px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    .product-card img {
+        width: 100%;
+        border-bottom: 1px solid #ddd;
+        padding-bottom: 10px;
+    }
+    .product-card h3 {
+        font-size: 18px;
+        margin: 10px 0;
+    }
+    .product-card .price {
+        color: #00b300;
+        font-size: 16px;
+        font-weight: bold;
+    }
+    .product-card .old-price {
+        text-decoration: line-through;
+        color: #999;
+        font-size: 14px;
+    }
+    .product-card .discount {
+        color: #ff4500;
+        font-weight: bold;
+        margin-left: 10px;
+    }
+    .product-card button {
+        background-color: #000;
+        color: #fff;
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        width: 100%;
+        margin-top: 10px;
+    }
+    .product-card button:hover {
+        background-color: #333;
+    }
+</style>
+</head>
+<body>
 
+
+
+<div class="products">
+<h2>PRODUTOS</h2>
+<div class="product-grid">
+    <div class="product-card">
+        <img src="fonte.jpg" alt="Fonte Gamer">
+        <h3>Fonte Gamer Rise Mode Zeus</h3>
+        <p class="price">R$ 199,99 <span class="old-price">R$ 249,00</span> <span class="discount">-20%</span></p>
+        <button>Comprar</button>
+    </div>
+    <div class="product-card">
+        <img src="../static/assets/teclado.jpg" alt="Teclado Gamer">
+        <h3>Teclado Gamer Neologic Infinite</h3>
+        <p class="price">R$ 29,90 <span class="old-price">R$ 45,00</span> <span class="discount">-27%</span></p>
+        <button>Comprar</button>
+    </div>
+    <div class="product-card">
+        <img src="headset.jpg" alt="Headset Gamer">
+        <h3>Headset Gamer HyperX</h3>
+        <p class="price">R$ 169,90 <span class="old-price">R$ 199,90</span> <span class="discount">-15%</span></p>
+        <button>Comprar</button>
+    </div>
+    <div class="product-card">
+        <img src="notebook.jpg" alt="Notebook Gamer">
+        <h3>Notebook Gamer Gigabyte AORUS</h3>
+        <p class="price">R$ 7.999,99 <span class="old-price">R$ 9.999,99</span> <span class="discount">-20%</span></p>
+        <button>Comprar</button>
+    </div>
+    <div class="product-card">
+        <img src="memoria.jpg" alt="Memória RAM">
+        <h3>Memória XPG Gammix D35</h3>
+        <p class="price">R$ 134,99 <span class="old-price">R$ 199,90</span> <span class="discount">-32%</span></p>
+        <button>Comprar</button>
+    </div>
+</div>
+</div>
+
+</body>
+</html>
 
 {% endblock %}
