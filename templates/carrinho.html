@@ -1,6 +1,95 @@
 {% extends 'layout.html' %}
 {% block content %}
 
-<h1>Carrinho</h1>
+<style>
+    .main-content {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    background-color: white;
+    margin: 20px auto;
+    max-width: 800px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.product {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.product img {
+    max-width: 100px;
+    border-radius: 5px;
+}
+.product-details {
+    flex-grow: 1;
+    margin-left: 20px;
+}
+.product-details h3 {
+    margin: 0;
+}
+.summary {
+    text-align: right;
+}
+.summary h3 {
+    margin-bottom: 10px;
+}
+.discount, .shipping, .finalize {
+    margin-top: 20px;
+}
+.discount input, .shipping input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+.finalize {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+.finalize button {
+    background-color: green;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+}
+</style>
+
+<div class="main-content">
+<div class="product">
+<img src="product-image.jpg" alt="Placa de Vídeo">
+<div class="product-details">
+    <h3>Placa de Vídeo Gigabyte Radeon RX 7600 Gaming OC</h3>
+    <p>8GB, GDDR6, 128-bit, GV-R76GAMING-OC-8GD</p>
+    <p><strong>R$ 1.699,99</strong> à vista no PIX</p>
+</div>
+<div>
+    <p>Quantidade:</p>
+    <input type="number" value="1" min="1">
+</div>
+</div>
+<div class="discount">
+<label for="discount">Cupom de desconto:</label>
+<input type="text" id="discount" placeholder="Insira seu cupom">
+</div>
+<div class="shipping">
+<label for="cep">Frete e Prazo:</label>
+<input type="text" id="cep" placeholder="Digite seu CEP">
+</div>
+<div class="summary">
+<h3>Resumo</h3>	
+<p>Subtotal: <strong>R$ 1.999,99</strong></p>
+<p>Total: <strong>R$ 1.699,99</strong> (com desconto PIX)</p>
+</div>
+<div class="finalize">
+<button>FINALIZAR PEDIDO</button>
+</div>
+</div>
 
 {% endblock %}
