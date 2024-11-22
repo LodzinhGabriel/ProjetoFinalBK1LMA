@@ -2,6 +2,21 @@ from flask import (Flask, render_template, request)
 
 app = Flask(__name__)
 
+class CRUD:
+    caminho = "produtos.json"
+    def __init__(self, modo) -> None:
+        self.modo = modo
+
+    def set_nome(self, nome):
+        set.nome = nome
+
+    def conexão(self, dados=None):
+        with open(self.caminho, self.modo, encoding='utf8') as file:
+            if self.modo == "+w":
+                file.write(dados)
+            elif self.modo == "+r":
+                return file.read()
+
 @app.route("/")
 def index():
     return render_template("inicial.html")
@@ -11,7 +26,7 @@ def contato():
     return render_template("contato.html")
 
 @app.route("/contato/email", methods=["GET", "POST"])
-def contato():
+def contatoemail():
     return render_template("contatoemail.html")
 
 @app.route("/sobre")
@@ -31,13 +46,13 @@ def erro():
     return render_template("pagina404.html")
 
 @app.route("/carrinho")
-def sobre():
+def carrinho():
     return render_template("carrinho.html")
 
 @app.route("/login")
-def sobre():
+def login():
     return render_template("login.html")
 
 @app.route("/novaconta")
-def sobre():
+def novaconta():
     return render_template("novaconta.html")
