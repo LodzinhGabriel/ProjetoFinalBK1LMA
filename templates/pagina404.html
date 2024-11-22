@@ -7,7 +7,8 @@
         left: 50px;
         font-size: 50px;
         position: absolute;
-        bottom: 33%;
+        bottom: -400px;
+
     }
 
     .content {
@@ -16,15 +17,14 @@
         font-size: 18px;
         left: 50px;
         position: absolute;
-        bottom: 10%
+        bottom: -570px;
     }
 
     .image {
         text-align: right;
-        font-size: 18px;
         position: absolute;
-        right: 25%;
-        bottom: 40%;
+        right: 17%;
+        bottom: -635px;
     }
 
     .title {
@@ -46,13 +46,18 @@
     .container-flex {
         display: flex;
     }
+
+div {
+    position: relative;
+  
+}
 </style>
+
 <div class="conteudo">
     <h1 class="title">404</h1>
     <div class="subcontent" >Página não encontrada</div>
     <div class="content" style="text-align: center;">A página que você procura não existe ou não está disponível no momento.</div>
+    <img src="../static/assets/pombo.png" width="400px" height="600px" class="image">
 </div>
-
-<img src="../imagens/balls.jpg" width="100px" height="100px" class="image">
         
 {% endblock %}
