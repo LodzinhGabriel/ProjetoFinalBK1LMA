@@ -189,29 +189,22 @@
             <input type="text" placeholder="Pesquisar...">
             <i class="fas fa-arrow-right arrow"></i>
         </div>
-        <i class="fas fa-user profile"></i>
-        <button class="cart-button">CARRINHO</button>
-    </div>
+      </div>
+    </nav>
 
-    <div class="red-stripe">
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-    </div>
-    
-        <div class="red-menu">
-        <a href="#"><i class="fas fa-phone-alt"></i>CONTATO</a>
-        <div></div>
-        <a href="#"><i class="fas fa-shopping-cart"></i>PRODUTOS</a>
-        <div></div>
-        <a href="#"><i class="fas fa-user"></i>SOBRE</a>
-    </div>
+    {%block content%}
+    {%endblock%}
 
-
-    {% block content %}
-    {% endblock %}
-</body>
+    <footer class="text-body-secondary py-5">
+      <div class="container">
+        <p class="float-end mb-1">
+          <a href="#">Volte para cima</a>
+        </p>
+        <p class="mb-1">&copy; flypixel. 2011-2024.</p>
+        <p class="mb-0">Feito usando as livrarias do Bootstrap.</p>
+      </div>
+    </footer>    
+  </body>
 </html>
 
 
