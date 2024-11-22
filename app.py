@@ -2,6 +2,21 @@ from flask import (Flask, render_template, request)
 
 app = Flask(__name__)
 
+class CRUD:
+    caminho = "produtos.json"
+    def __init__(self, modo) -> None:
+        self.modo = modo
+
+    def set_nome(self, nome):
+        set.nome = nome
+
+    def conexão(self, dados=None):
+        with open(self.caminho, self.modo, encoding='utf8') as file:
+            if self.modo == "+w":
+                file.write(dados)
+            elif self.modo == "+r":
+                return file.read()
+
 @app.route("/")
 def index():
     return render_template("inicial.html")
