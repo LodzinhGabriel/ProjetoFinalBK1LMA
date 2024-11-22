@@ -1,6 +1,77 @@
 {% extends 'layout.html' %}
 {% block content %}
 
-<h1>Login</h1>
+<style>
+    .main-content {
+            display: flex;
+            justify-content: space-between;
+            padding: 150px;
+        }
+        .login-form, .create-account {
+            background-color: #333;
+            padding: 60px;
+            border-radius: 10px;
+            color: #fff;
+            
+        }
+        .login-form h2, .create-account h2 {
+            margin-top: 0;
+        }
+        .login-form input, .create-account button {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 15px;
+        }
+        .login-form input[type="checkbox"] {
+            width: auto;
+            cursor: pointer;
+        }
+        .login-form .remember-me {
+            display: flex;
+            align-items: center;
+        }
+        .login-form .remember-me label {
+            margin-left: 5px;
+        }
+        .login-form .login-button {
+            background-color: #e60000;
+            color: #fff;
+            cursor: pointer;
+        }
+        .create-account .create-button {
+            background-color: #e60000;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #7d7b7b;
+        }
+
+</style>
+
+<div class="main-content">
+    <div class="login-form">
+        <h2>Já tem uma conta?</h2>
+        <input type="email" placeholder="E-mail *">
+        <input type="password" placeholder="Senha *">
+        <div class="remember-me">
+            <input type="checkbox" id="remember">
+            <label for="remember">Lembrar meus dados</label>
+        </div>
+        <button class="login-button">ACESSAR CONTA</button>
+    </div>
+    <div class="create-account">
+
+        <h2>Crie agora a sua conta</h2>
+        <h2> Apertando no botão </h2>
+
+        <button class="create-button">CRIAR CONTA</button>
+    </div>
+</div>
 
 {% endblock %}

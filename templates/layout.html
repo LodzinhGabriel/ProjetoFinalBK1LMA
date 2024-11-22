@@ -1,133 +1,217 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-  <head>
-
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
-    <meta name="generator" content="Hugo 0.122.0">
-    <title>flypixel</title>
-
-    <script src="../static/assets/js/color-modes.js"></script>
-
-    <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/album/">
-
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
-
-    <link rel="stylesheet" href="../static/assets/dist/css/bootstrap.min.css">
-
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" type="image/png" href="/static/assets/logo_site.png"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PLAYX</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-      .bd-placeholder-img {
-        font-size: 1.125rem;
-        text-anchor: middle;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        user-select: none;
-      }
-
-      @media (min-width: 768px) {
-        .bd-placeholder-img-lg {
-          font-size: 3.5rem;
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #ffffff;
         }
-      }
 
-      .b-example-divider {
-        width: 100%;
-        height: 3rem;
-        background-color: rgba(0, 0, 0, .1);
-        border: solid rgba(0, 0, 0, .15);
-        border-width: 1px 0;
-        box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
-      }
-
-      .b-example-vr {
-        flex-shrink: 0;
-        width: 1.5rem;
-        height: 100vh;
-      }
-
-      .bi {
-        vertical-align: -.125em;
-        fill: currentColor;
-      }
-
-      .nav-scroller {
-        position: relative;
-        z-index: 2;
-        height: 2.75rem;
-        overflow-y: hidden;
-      }
-
-      .nav-scroller .nav {
-        display: flex;
-        flex-wrap: nowrap;
-        padding-bottom: 1rem;
-        margin-top: -1px;
-        overflow-x: auto;
-        text-align: center;
-        white-space: nowrap;
-        -webkit-overflow-scrolling: touch;
-      }
-
-      .btn-bd-primary {
-        --bd-violet-bg: #712cf9;
-        --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
-
-        --bs-btn-font-weight: 600;
-        --bs-btn-color: var(--bs-white);
-        --bs-btn-bg: var(--bd-violet-bg);
-        --bs-btn-border-color: var(--bd-violet-bg);
-        --bs-btn-hover-color: var(--bs-white);
-        --bs-btn-hover-bg: #6528e0;
-        --bs-btn-hover-border-color: #6528e0;
-        --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
-        --bs-btn-active-color: var(--bs-btn-hover-color);
-        --bs-btn-active-bg: #5a23c8;
-        --bs-btn-active-border-color: #5a23c8;
-      }
-
-      .bd-mode-toggle {
-        z-index: 1500;
-      }
-
-      .bd-mode-toggle .dropdown-menu .active .bi {
-        display: block !important;
-      }
-    </style>
-  </head>
-  <body>
-    <nav class="navbar navbar-expand-lg bg-body-tertiary" style="background-color: black;">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="#">flypixel.</a>
+        /* Barra superior  */
         
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-          <div class="navbar-nav">
-            <a class="nav-link active" aria-current="page" href="#">Produtos</a>
-            <a class="nav-link" href="#">Features</a>
-            <a class="nav-link" href="#">Produtos</a>
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #000;
+            padding: 5px;
+        }
 
-            <form class="d-flex" role="search">
-              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-              <button class="btn btn-outline-success" type="submit">Search</button>
-            </form>
+        .navbar .menu-icon {
+            color: #fff;
+            font-size: 24px;
+            cursor: pointer;
+        }
 
-          </div>
+        .navbar .logo {
+            color: #fff;
+            font-size: 20px;
+            margin-left: 20px;
+            cursor: pointer
+        }
+        
+
+        .navbar .search-bar {
+            display: flex;
+            align-items: center;
+            flex-grow: 1;
+            margin: 0 15px;
+        }
+
+        .navbar .search-bar input {
+            width: 100%;
+            padding: 10px;
+            border: 2px solid #fff;
+            border-radius: 13px;
+            outline: none;
+            background-color: #f0f0f0;
+        }
+
+        .navbar .search-bar .arrow {
+            margin-left: -25px;
+            cursor: pointer;
+            color: #000;
+            font-size: 16px;
+        }
+
+        .navbar .profile {
+            color: #fff;
+            margin-left: 10px;
+            font-size: 25px;
+            cursor: pointer;
+            padding: 15px;
+        }
+        
+        .profile {
+        transition: color 0.3s;
+    }
+
+        .profile:hover {
+        color: red; 
+    }
+
+        .navbar .cart-button {
+            background-color: #00FF00;
+            border: none;
+            padding: 10px 15px;
+            color: #000;
+            font-weight: bold;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        
+        .cart-button {
+        background-color: #00cc00;
+        color: #000;  
+        border: none;
+        transition: color 0.3s, background-color 0.2s;
+        }
+
+        .cart-button:hover {
+        color: #fff;
+        background-color: #009900;
+        }
+        
+        .logo{
+        font-weight: bold;
+        }
+        
+        .logo span {
+
+            font-size: 24px;
+            font-weight: bold;
+            color: red;
+        }
+        
+        .navbar .logo i {
+            font-size: 20px;
+            color: red
+        }
+        
+        .menu-icon {
+        color: #000; 
+        font-size: 24px; 
+        cursor: pointer;
+        transition: color 0.2s; 
+        }
+
+        .menu-icon:hover {
+        color: #ff0000; 
+        }
+        
+
+
+        .logo span:hover {
+        
+        color: white;
+        transition: color 0.2s
+    }
+
+        .logo i:hover {
+        color: white;
+        transition: color 0.2s
+        
+    }
+        
+
+
+        /* Faixa vermelha */
+
+         .red-menu {
+            background-color: #FF0000;
+            display: flex;
+            justify-content: space-around;
+            padding: 13px 0;
+        }
+
+         .red-menu a {
+            color: #000;
+            font-weight: bold;
+            text-decoration: none;
+            font-size: 15px;
+            display: flex;
+            align-items: center;
+        }
+
+        .red-menu a i {
+            margin-right: 15px;
+            transition: color 0.2s
+        }
+
+        .red-menu a:hover {
+            color: #fff;
+        }
+
+        .red-menu div {
+            border-left: 5px solid #fff;
+            border-right: 6px solid #fff;
+            
+        }
+
+
+
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <i class="fas fa-bars menu-icon"></i>
+        <div class="logo">
+            <i class="fas fa-play-circle"></i>
+            <span>PLAYX</span>
         </div>
-      </div>
-    </nav>
+        <div class="search-bar">
+            <input type="text" placeholder="Pesquisar...">
+            <i class="fas fa-arrow-right arrow"></i>
+        </div>
+        <i class="fas fa-user profile"></i>
+        <button class="cart-button">CARRINHO</button>
+    </div>
 
-    {%block content%}
-    {%endblock%}
+    <div class="red-stripe">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+    
+        <div class="red-menu">
+        <a href="#"><i class="fas fa-phone-alt"></i>CONTATO</a>
+        <div></div>
+        <a href="#"><i class="fas fa-shopping-cart"></i>PRODUTOS</a>
+        <div></div>
+        <a href="#"><i class="fas fa-user"></i>SOBRE</a>
+    </div>
 
-    <footer class="text-body-secondary py-5">
-      <div class="container">
-        <p class="float-end mb-1">
-          <a href="#">Volte para cima</a>
-        </p>
-        <p class="mb-1">&copy; flypixel. 2011-2024.</p>
-        <p class="mb-0">Feito usando as livrarias do Bootstrap.</p>
-      </div>
-    </footer>    
-  </body>
+
+    {% block content %}
+    {% endblock %}
+</body>
 </html>
+
+

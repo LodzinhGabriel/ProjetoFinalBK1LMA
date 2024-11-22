@@ -26,7 +26,7 @@ def contato():
     return render_template("contato.html")
 
 @app.route("/contato/email", methods=["GET", "POST"])
-def contatoemail():
+def email():
     return render_template("contatoemail.html")
 
 @app.route("/sobre")

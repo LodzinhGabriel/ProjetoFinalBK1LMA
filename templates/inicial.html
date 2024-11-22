@@ -1,6 +1,104 @@
 {% extends 'layout.html' %}
 {% block content %}
 
+<style>
+
+          
+.banner {
+            background-color: #000;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+        }
+        .banner .banner-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .banner .banner-content .arrow {
+            font-size: 24px;
+            color: #ff0000;
+        }
+        .banner .banner-content .text {
+            margin: 0 20px;
+        }
+        .banner .banner-content .text .title {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .banner .banner-content .text .subtitle {
+            font-size: 18px;
+            color: #ff0000;
+        }
+        .banner .banner-content .text .cta {
+            background-color: #ff0000;
+            padding: 10px 20px;
+            border-radius: 5px;
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .banner .banner-content .text .cta:hover {
+            background-color: #f50000b8;
+            padding: 10px 20px;
+            border-radius: 5px;
+            color: #000000;
+            text-decoration: none;
+        }
+
+        .banner .banner-content .text .installments {
+            font-size: 18px;
+            color: #fff;
+        }
+        .banner .banner-content .image {
+            width: 300px;
+            height: 300px;
+            background-color: #ccc;
+            border-radius: 50%;
+            overflow: hidden;
+        }
+        .banner .banner-content .image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .highlights {
+            background-color: #ff0000;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .products {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            padding: 20px;
+        }
+
+        .product {
+            margin: 20px;
+            text-align: center;
+        }
+
+        .product img {
+            width: 300px;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .product-title {
+            color: white;
+            font-size: 18px;
+            margin-top: 10px;
+        }
+
+</style>
+
 <div id="carouselExample" class="carousel slide">
     <div class="carousel-inner">
       <div class="carousel-item active">
@@ -22,5 +120,38 @@
       <span class="visually-hidden">Next</span>
     </button>
 </div>
+
+<div class="banner">
+  <div class="banner-content">
+
+      <div class="text">
+          <div class="title">PROCURE PELO SELO ⚡:</div>
+          <br>
+          <div class="subtitle">PARA MAIS VANTAGENS</div>
+          <br>
+          <div class="installments">12x SEM JUROS</div>
+          <br>
+          <br>
+          <a href="#" class="cta">SAIBA MAIS</a>
+      </div>
+      <div class="image">
+          <img src="/static/assets/mascote_galinha.jpg" alt="Banner Image">
+      </div>
+
+
+    </div>
+    <br>
+    <br>
+    <br>
+    <div class="highlights">DESTAQUE</div>
+
+    <div class="products">
+      <div class="product">
+          <img src="/static/assets/produtos.png" alt="Imagem de produto em destaque">
+          <div class="product-title">EXPERIMENTE NOSSOS PRODUTOS, OS MELHORES DA REGIÃO</div>
+      </div>
+  </div>
+
+
 
 {% endblock %}
