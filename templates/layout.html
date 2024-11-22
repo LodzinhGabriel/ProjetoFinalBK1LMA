@@ -2,8 +2,9 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
+    <link rel="shortcut icon" type="image/png" href="/static/assets/logo_site.png"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inicio</title>
+    <title>PLAYX</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         body {
@@ -12,7 +13,8 @@
             background-color: #ffffff;
         }
 
-        /* Barra superior */
+        /* Barra superior  */
+        
         .navbar {
             display: flex;
             align-items: center;
@@ -30,8 +32,10 @@
         .navbar .logo {
             color: #fff;
             font-size: 20px;
-            margin-left: 10px;
+            margin-left: 20px;
+            cursor: pointer
         }
+        
 
         .navbar .search-bar {
             display: flex;
@@ -42,9 +46,9 @@
 
         .navbar .search-bar input {
             width: 100%;
-            padding: 8px;
+            padding: 10px;
             border: 2px solid #fff;
-            border-radius: 5px;
+            border-radius: 13px;
             outline: none;
             background-color: #f0f0f0;
         }
@@ -63,6 +67,14 @@
             cursor: pointer;
             padding: 15px;
         }
+        
+        .profile {
+        transition: color 0.3s;
+    }
+
+        .profile:hover {
+        color: red; 
+    }
 
         .navbar .cart-button {
             background-color: #00FF00;
@@ -73,39 +85,110 @@
             border-radius: 5px;
             cursor: pointer;
         }
+        
+        .cart-button {
+        background-color: #00cc00;
+        color: #000;  
+        border: none;
+        transition: color 0.3s, background-color 0.2s;
+        }
+
+        .cart-button:hover {
+        color: #fff;
+        background-color: #009900;
+        }
+        
+        .logo{
+        font-weight: bold;
+        }
+        
+        .logo span {
+
+            font-size: 24px;
+            font-weight: bold;
+            color: red;
+        }
+        
+        .navbar .logo i {
+            font-size: 20px;
+            color: red
+        }
+        
+        .menu-icon {
+        color: #000; 
+        font-size: 24px; 
+        cursor: pointer;
+        transition: color 0.2s; 
+        }
+
+        .menu-icon:hover {
+        color: #ff0000; 
+        }
+        
+
+
+        .logo span:hover {
+        
+        color: white;
+        transition: color 0.2s
+    }
+
+        .logo i:hover {
+        color: white;
+        transition: color 0.2s
+        
+    }
+        
+
 
         /* Faixa vermelha */
-        .red-stripe {
+
+         .red-menu {
             background-color: #FF0000;
-            height: 35px;
             display: flex;
-            justify-content: space-evenly;
+            justify-content: space-around;
+            padding: 13px 0;
         }
 
-        .red-stripe div {
-            width: 1%;
-            background-color: #FFFFFF;
+         .red-menu a {
+            color: #000;
+            font-weight: bold;
+            text-decoration: none;
+            font-size: 15px;
+            display: flex;
+            align-items: center;
         }
 
-        /* Texto do conteúdo */
-        .content {
-            text-align: center;
-            color: #ffffff;
-            font-size: 18px;
-            margin: 120px auto;
-            max-width: 800px;
-            line-height: 1.6;
+        .red-menu a i {
+            margin-right: 15px;
+            transition: color 0.2s
         }
+
+        .red-menu a:hover {
+            color: #fff;
+        }
+
+        .red-menu div {
+            border-left: 5px solid #fff;
+            border-right: 6px solid #fff;
+            
+        }
+
+
 
     </style>
 </head>
 <body>
     <div class="navbar">
         <i class="fas fa-bars menu-icon"></i>
-        <div class="logo">PLAYX</div>
+        <div class="logo">
+            <i class="fas fa-play-circle"></i>
+            <span>PLAYX</span>
+        </div>
         <div class="search-bar">
             <input type="text" placeholder="Pesquisar...">
             <i class="fas fa-arrow-right arrow"></i>
+            
         </div>
         <i class="fas fa-user profile"></i>
         <button class="cart-button">CARRINHO</button>
@@ -117,10 +200,22 @@
         <div></div>
         <div></div>
     </div>
+    
+        <div class="red-menu">
+        <a href="#"><i class="fas fa-phone-alt"></i>CONTATO</a>
+        <div></div>
+        <a href="#"><i class="fas fa-shopping-cart"></i>PRODUTOS</a>
+        <div></div>
+        <a href="#"><i class="fas fa-user"></i>SOBRE</a>
+    </div>
+
 
     {% block content %}
     {% endblock %}
 
 
+
+
 </body>
 </html>
+
