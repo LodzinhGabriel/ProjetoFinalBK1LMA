@@ -3,14 +3,14 @@ from flask import (Flask, render_template, request)
 app = Flask(__name__)
 
 class CRUD:
-    caminho = "produtos.json"
-    def __init__(self, modo) -> None:
+    def __init__(self, modo, caminho) -> None:
         self.modo = modo
+        self.caminho = caminho
 
     def set_nome(self, nome):
         set.nome = nome
 
-    def conexão(self, dados=None):
+    def conexao(self, dados=None):
         with open(self.caminho, self.modo, encoding='utf8') as file:
             if self.modo == "+w":
                 file.write(dados)
@@ -25,9 +25,38 @@ def index():
 def contato():
     return render_template("contato.html")
 
-@app.route("/contato/email", methods=["GET", "POST"])
-def email():
-    return render_template("contatoemail.html")
+@app.route("/contato-email", methods=["GET", "POST"])
+def email(nome = None, email = None, cidade = None, telefone = None, assunto = None, mensagem = None, concluido=None):
+
+    if 'nome' and 'email' and 'cidade' and 'telefone' and 'assunto' and 'mensagem' in request.form:
+        nome = request.form.get('nome')
+        email = request.form.get('email')
+        cidade = request.form.get('cidade')
+        telefone = request.form.get('telefone')
+        assunto = request.form.get('assunto')
+        mensagem = request.form.get('mensagem')
+
+        texto = f"""
+        RELATÓRIO DO CONTATO POR EMAIL
+        ===========
+        Nome: {nome}
+        Email: {email}
+        Cidade: {cidade}
+        Telefone: {telefone}
+
+        Assunto: {assunto}
+
+        {mensagem}
+        """
+        crud = CRUD('+w', f'./relatorios/email/{email}.txt')
+        crud.conexao(texto)
+
+        concluido = True
+
+        return render_template("contatoemail.html", concluido=concluido)
+    else:
+        return render_template("contatoemail.html")
+    
 
 @app.route("/sobre")
 def sobre():

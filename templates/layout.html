@@ -16,10 +16,12 @@
         /* Barra superior  */
         
         .navbar {
+            position: fixed;
             display: flex;
             align-items: center;
             justify-content: space-between;
             background-color: #000;
+            width: 100%;
             padding: 5px;
         }
 
@@ -42,6 +44,7 @@
             align-items: center;
             flex-grow: 1;
             margin: 0 15px;
+            padding-right: 10px;
         }
 
         .navbar .search-bar input {
@@ -119,13 +122,13 @@
         font-size: 24px; 
         cursor: pointer;
         transition: color 0.2s; 
+        margin-left: 15px;
+        margin-bottom: 3px;
         }
 
         .menu-icon:hover {
         color: #ff0000; 
         }
-        
-
 
         .logo span:hover {
         
@@ -174,16 +177,40 @@
             
         }
 
+        .rodape {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0px;
+            margin-top: 30px;
+            background-color: #000;
+            width: 100%;
+            height: 100px;
+        }
 
+        .texto-rodape{
+            color: white;
+            text-align: center;
+        }
+
+        .logotipo-pequeno {
+            height: 50px;
+        }
+
+        .separador-vertical {
+            width: 1px;
+            height: 50px;
+            background-color: gray;
+            margin: 5px;
+        }
 
     </style>
 </head>
 <body>
-    <div class="navbar">
-        <i class="fas fa-bars menu-icon"></i>
+    <nav class="navbar">
+        <i class="fa-solid fa-bars menu-icon"></i>
         <div class="logo">
-            <i class="fas fa-play-circle"></i>
-            <span>PLAYX</span>
+            <img class="logotipo-pequeno" src="../static/assets/playxlogotipo.png" alt="logo">
         </div>
         <div class="search-bar">
             <input type="text" placeholder="Pesquisar...">
@@ -195,15 +222,19 @@
     {%block content%}
     {%endblock%}
 
-    <footer class="text-body-secondary py-5">
-      <div class="container">
-        <p class="float-end mb-1">
-          <a href="#">Volte para cima</a>
-        </p>
-        <p class="mb-1">&copy; flypixel. 2011-2024.</p>
-        <p class="mb-0">Feito usando as livrarias do Bootstrap.</p>
-      </div>
-    </footer>    
+    <div class="rodape">
+        <div class="logo">
+            <img class="logotipo-pequeno" src="../static/assets/playxlogotipo.png" alt="logo">
+        </div>
+        <div class="separador-vertical">
+
+        </div>
+        <div style="line-height: 3px;">
+            <p class="texto-rodape">Copyright 2024 Playx.</p>
+            <p class="texto-rodape">Todos os direitos reservados.</p>
+        </div>
+        
+    </div>
   </body>
 </html>
 

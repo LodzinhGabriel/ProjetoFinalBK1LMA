@@ -6,7 +6,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            height: calc(100vh - 60px);
+            margin-top: 25px;
             
         }
         
@@ -32,7 +32,7 @@
             width: calc(100% - 20px);
             height: 100px;
         }
-        .form-container .submit-button {
+        .form-container .submit-button, .botao {
             background-color: rgb(255, 0, 0);
             color: white;
             padding: 10px;
@@ -43,7 +43,7 @@
             cursor: pointer;
         }
         .info {
-            margin-top: 1px;
+            padding-top: 60px;
             text-align: center;
             color: white;
         }
@@ -51,6 +51,14 @@
             margin: 0;
             font-family: 'Arial', sans-serif;
             background-color: #7d7b7b;
+        }
+        .form-container .submit-button:hover {
+            background-color: rgb(200, 0, 0);
+        }
+        
+        .voltar {
+            margin: 5px;
+            text-decoration: none;
         }
 
 </style>
@@ -65,16 +73,33 @@
     N° (17) 3453-6666
 </div>
 
+{% if concluido %}
+
 <div class="content">
     <div class="form-container">
         <h2>CONTATO PELO E-MAIL</h2>
-        <input type="text" placeholder="NOME">
-        <input type="email" placeholder="E-MAIL">
-        <input type="text" placeholder="CIDADE">
-        <input type="text" placeholder="TELEFONE">
-        <input type="text" placeholder="ASSUNTO">
-        <textarea placeholder="MENSAGEM"></textarea>
-        <button class="submit-button">ENVIAR</button>
+        <p>Seu contato foi enviado para nossos sistemas com sucesso!</p>
+        <a class="botao voltar" href="/">VOLTAR PARA A PÁGINA INICIAL</a>
     </div>
 </div>
+
+{% else %}
+
+<div class="content">
+    <div class="form-container">
+        <h2>CONTATO PELO E-MAIL</h2>
+        <form method="POST">
+            <input type="text" name="nome" id="nome" placeholder="NOME" required>
+            <input type="email" name="email" id="email" placeholder="E-MAIL" required>
+            <input type="text" name="cidade" id="cidade" placeholder="CIDADE" required>
+            <input type="text" name="telefone" id="telefone" placeholder="TELEFONE" required>
+            <input type="text" name="assunto" id="assunto" placeholder="ASSUNTO" style="width: 375px;" required>
+            <textarea name="mensagem" id="mensagem" placeholder="MENSAGEM" style="max-width: 375px;"></textarea>
+            <button type="submit" class="submit-button">ENVIAR</button>
+        </form>
+    </div>
+</div>
+
+{% endif %}
+
 {% endblock %}
