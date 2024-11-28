@@ -71,13 +71,16 @@ def produtos(pesquisa = None):
     dados = crud.conexao(dados)
     dados = json.loads(dados)
 
-    print(dados)
-
     return render_template("produtos.html", produtos=dados)
 
-@app.route("/compra/<string:produto>")
-def compra(produto = None):
-    return render_template("compra.html")
+@app.route("/compra/<int:produto>", methods=["GET"])
+def compra(produto):
+    dados = None
+    crud = CRUD('+r', './static/assets/json/produtos.json')
+    dados = crud.conexao(dados)
+    dados = json.loads(dados)
+
+    return render_template("compra.html", produto=produto, dados=dados)
     
 @app.route("/erro404")
 def erro():

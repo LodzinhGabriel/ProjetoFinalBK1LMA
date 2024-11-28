@@ -1,6 +1,133 @@
 {% extends 'layout.html' %}
 {% block content %}
 
-<h1>Compra</h1>
+<style>
+    .content{
+        color: #ffffff;
+        font-size: 18px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
 
+    body {
+        margin: 0;
+        font-family: 'Arial', sans-serif;
+        background-color: #7d7b7b;
+        justify-content: center;
+        align-items: center;
+        
+    }
+
+    .container {
+
+        display: flex;
+        flex-flow: row;
+        
+        background-color: #444;
+        padding: 25px;
+        border-radius: 10px;
+        text-align: center;
+    }
+
+    .information {
+        width: 50%;
+    }
+
+
+.product-image img {
+    width: 100%;
+    max-width: 300px;
+    margin-bottom: 20px;
+}
+
+.product-title {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.product-info {
+    margin: 10px 0;
+    font-size: 16px;
+}
+
+.price-info {
+    background-color: #555;
+    padding: 15px;
+    border-radius: 10px;
+    margin: 20px 0;
+}
+
+.price-info p {
+    margin: 10px 0;
+}
+
+.price-discount {
+    font-size: 18px;
+    font-weight: bold;
+    color: #0f0;
+}
+
+.price-installments {
+    color: #ddd;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn-buy {
+    background-color: #ff0000;  
+    color: #ffffff;
+}
+
+.btn-installments {
+    background-color: #ff4747;
+    color: #f6f6f6;
+}
+</style>
+
+<div class="content">
+    <div class="container">
+        
+        {% if produto and dados %}
+            {% for p in dados %}
+                {% if p['id'] == produto %}
+                    <div class="product-image">
+                        <img src="{{url_for('static', filename=p['imagem'])}}" alt="{{p['nome']}}">
+                    </div>
+            
+                    <div class="information">
+                        <div class="product-title">
+                            p['nome']
+                        </div>
+                        <div class="product-info">Marca: {{p['marca']}}</div>
+                        <div class="product-info">Produto Disponível</div>
+                        <div class="price-info">
+                            <p>à vista <span class="price-discount">R$ {{p['preco']}}</span> no PIX com 15% de desconto</p>
+                            <p class="price-installments">R$ {{p['preco']*1.2}} em até 12x de R$ {{(p['preco']*1.2)/12}} sem juros no cartão</p>
+                        </div>
+                        <div class="buttons">
+                            <button class="btn btn-buy">COMPRAR</button>
+                            <button class="btn btn-installments">ADICIONAR AO CARRINHO</button>
+                        </div>
+                    </div>
+                {% endif %}
+            {% endfor %}
+        {% endif %}
+    </div>
+    
+</div>
 {% endblock %}
