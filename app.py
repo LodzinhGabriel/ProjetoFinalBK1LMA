@@ -1,4 +1,5 @@
 from flask import (Flask, render_template, request)
+import json
 
 app = Flask(__name__)
 
@@ -36,20 +37,21 @@ def email(nome = None, email = None, cidade = None, telefone = None, assunto = N
         assunto = request.form.get('assunto')
         mensagem = request.form.get('mensagem')
 
-        texto = f"""
-        RELATÓRIO DO CONTATO POR EMAIL
-        ===========
-        Nome: {nome}
-        Email: {email}
-        Cidade: {cidade}
-        Telefone: {telefone}
 
-        Assunto: {assunto}
 
-        {mensagem}
-        """
-        crud = CRUD('+w', f'./relatorios/email/{email}.txt')
-        crud.conexao(texto)
+        texto = {
+            "nome": nome,
+            "email": email,
+            "cidade": cidade,
+            "telefone": telefone,
+            "assunto": assunto,
+            "mensagem": mensagem
+        }
+
+        conversao = json.bumps(texto)
+
+        crud = CRUD('+w', f'./relatorios/email/{email}.json')
+        crud.conexao(conversao)
 
         concluido = True
 

@@ -9,11 +9,14 @@
             color: #fff;
             text-align: center;
             padding: 20px 0;
+            position: relative;
+            top: 60px;
         }
         .banner .banner-content {
             display: flex;
             align-items: center;
             justify-content: center;
+            
         }
         .banner .banner-content .arrow {
             font-size: 24px;
@@ -30,7 +33,7 @@
             font-size: 18px;
             color: #ff0000;
         }
-        .banner .banner-content .text .cta {
+        .cta {
             background-color: #ff0000;
             padding: 10px 20px;
             border-radius: 5px;
@@ -67,34 +70,50 @@
             background-color: #ff0000;
             color: #fff;
             text-align: center;
-            padding: 10px 0;
+            padding: 2px 0;
             font-size: 24px;
             font-weight: bold;
         }
 
         .products {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-wrap: wrap;
+            position: relative;
             padding: 20px;
+            margin: 0px;
+            background-color: #111;
+            flex-direction: row;
+            height: 100vh;
         }
 
         .product {
+            display: flex;
+            justify-content: center;
+            align-items: center;
             margin: 20px;
             text-align: center;
         }
 
         .product img {
-            width: 300px;
+            width: 40vh;
+            height: 40vh;
             height: auto;
             border-radius: 10px;
         }
 
+        .product-texto {
+            color: white;
+            font-size: 2vh;
+            /*margin-top: 10px;*/
+        }
+
         .product-title {
             color: white;
-            font-size: 18px;
-            margin-top: 10px;
+            font-size: 5vh;
+            font-weight: bold;
+            /*margin-top: 10px;*/
+        }
+
+        .product .texto {
+            width: 800px;
         }
 
 </style>
@@ -121,12 +140,16 @@
     <br>
     <br>
     <br>
-    <div class="highlights">DESTAQUE</div>
-
+</div>
     <div class="products">
       <div class="product">
           <img src="/static/assets/produtos.png" alt="Imagem de produto em destaque">
-          <div class="product-title">EXPERIMENTE NOSSOS PRODUTOS, OS MELHORES DA REGIÃO</div>
+          <div class="texto">
+            <p class="product-title">EXPERIMENTE NOSSOS PRODUTOS, OS MELHORES DA REGIÃO</p>
+            <p class="product-texto">Monte o seu computador, usando os descontos dos nossos melhores produtos da região! Desde produtos de entrada até os produtos mais potentes, nós temos a melhor promoção que encaixe no seus padrões. Aproveite!</p>
+            <a href="/produtos" class="cta">VEJA NOSSOS PRODUTOS</a>
+          </div>
+          
       </div>
   </div>
 
