@@ -66,7 +66,14 @@ def sobre():
     
 @app.route("/produtos/", methods=("GET", ))
 def produtos(pesquisa = None):
-    return render_template("produtos.html")
+    dados = None
+    crud = CRUD('+r', './static/assets/json/produtos.json')
+    dados = crud.conexao(dados)
+    dados = json.loads(dados)
+
+    print(dados)
+
+    return render_template("produtos.html", produtos=dados)
 
 @app.route("/compra/<string:produto>")
 def compra(produto = None):
@@ -87,3 +94,7 @@ def login():
 @app.route("/novaconta")
 def novaconta():
     return render_template("novaconta.html")
+
+@app.errorhandler(404)
+def coisa(coisa):
+    return render_template("pagina404.html")
