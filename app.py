@@ -48,7 +48,7 @@ def email(nome = None, email = None, cidade = None, telefone = None, assunto = N
             "mensagem": mensagem
         }
 
-        conversao = json.bumps(texto)
+        conversao = json.dumps(texto)
 
         crud = CRUD('+w', f'./relatorios/email/{email}.json')
         crud.conexao(conversao)
