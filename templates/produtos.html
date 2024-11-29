@@ -89,14 +89,27 @@
     <div class="product-grid">
         {% if produtos %}
             {% for p in produtos %}
-                <div class="product-card">
-                    <img src="{{url_for('static', filename=p['imagem'])}}" alt="Imagem do Produto">
-                    <h3>{{p['nome']}}</h3>
-                    <p class="price">R$ {{p['preco']}} <span class="old-price">R$ {{ 1.2*p['preco'] | round()}} </span> <span class="discount">-20%</span></p>
-                    <a href="/compra/{{p['id']}}">
-                        <button>Comprar</button>
-                    </a>
-                </div>
+                {% if pesquisa %}
+                    {% if pesquisa|lower in p['nome']|lower %}
+                        <div class="product-card">
+                            <img src="{{url_for('static', filename=p['imagem'])}}" alt="Imagem do Produto">
+                            <h3>{{p['nome']}}</h3>
+                            <p class="price">R$ {{p['preco']}} <span class="old-price">R$ {{ 1.2*p['preco'] | round()}} </span> <span class="discount">-20%</span></p>
+                            <a href="/compra/{{p['id']}}">
+                                <button>Comprar</button>
+                            </a>
+                        </div>
+                    {% endif %}
+                {% else %}
+                    <div class="product-card">
+                        <img src="{{url_for('static', filename=p['imagem'])}}" alt="Imagem do Produto">
+                        <h3>{{p['nome']}}</h3>
+                        <p class="price">R$ {{p['preco']}} <span class="old-price">R$ {{ 1.2*p['preco'] | round()}} </span> <span class="discount">-20%</span></p>
+                        <a href="/compra/{{p['id']}}">
+                            <button>Comprar</button>
+                        </a>
+                    </div>
+                {% endif %}
             {% endfor %}
         {% endif %}
     </div>

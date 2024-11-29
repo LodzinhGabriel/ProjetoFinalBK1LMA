@@ -28,6 +28,12 @@
             z-index: 1000;
         }
 
+        .navbar .navlinks {
+            display: flex;
+            align-items: center;
+            height: 50;
+        }
+
         .navbar .menu-icon {
             color: #fff;
             font-size: 24px;
@@ -45,9 +51,10 @@
         .navbar .search-bar {
             display: flex;
             align-items: center;
-            flex-grow: 1;
+            
             margin: 0 15px;
             padding-right: 10px;
+            width: 75vh;
         }
 
         .navbar .search-bar input {
@@ -72,6 +79,10 @@
             font-size: 25px;
             cursor: pointer;
             padding: 15px;
+        }
+
+        .navbar .carrinho p {
+            margin: 8px;
         }
         
         .profile {
@@ -246,14 +257,21 @@
 </head>
 <body>
     <nav class="navbar">
-        <i class="fa-solid fa-bars menu-icon" id="sidebar-bttn"></i>
-        <a href="/" class="logo">
-            <img class="logotipo-pequeno" src="../static/assets/playxlogotipo.png" alt="logo">
-        </a>
-        <div class="search-bar">
-            <input type="text" placeholder="Pesquisar...">
-            <i class="fas fa-arrow-right arrow"></i>
+        <div class="navlinks">
+            <i class="fa-solid fa-bars menu-icon" id="sidebar-bttn"></i>
+            <a href="/" class="logo">
+                <img class="logotipo-pequeno" src="../static/assets/playxlogotipo.png" alt="logo">
+            </a>
+            
         </div>
+
+        <form action="/produtos" class="search-bar">
+            <input type="text" placeholder="Pesquisar..." name="pesquisa">
+            <i class="fas fa-arrow-right arrow"></i>
+        </form>
+
+        <span></span>
+
       </div>
     </nav>
 
